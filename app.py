@@ -85,17 +85,7 @@ def animal_facts():
     animal = request.args.get('animal')
 
     # Assigns animal fact based on animal chosen
-    animal_fact = "None"
-    if (animal == 'koala'):
-        animal_fact = animal_to_fact['koala']
-    elif (animal == 'parrot'):
-        animal_fact = animal_to_fact['parrot']
-    elif (animal == 'mantis shrimp'):
-        animal_fact = animal_to_fact['mantis shrimp']
-    elif (animal == 'lion'):
-        animal_fact = animal_to_fact['lion']
-    elif (animal == 'narwhal'):
-        animal_fact = animal_to_fact['narwhal']
+    animal_fact = animal_to_fact.get(animal)
 
     # Holds list of all the animals
     animal_list = animal_to_fact.keys()
